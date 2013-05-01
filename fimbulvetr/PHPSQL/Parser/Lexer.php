@@ -6,6 +6,7 @@
  *
  * Copyright (c) 2010-2012, Justin Swanhart
  * with contributions by André Rothe <arothe@phosco.info, phosco@gmx.de>
+ * with contributions by Dan Vande More <bigdan@gmail.com>
  *
  * All rights reserved.
  *
