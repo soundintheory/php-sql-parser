@@ -1,0 +1,13 @@
+{
+    "name": "soundintheory/php-sql-parser",
+    "type": "library",
+    "description": "SQL parsing tools for PHP",
+    "license": "BSD-2-Clause",
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-0": { "PHPSQL": "src/" }
+    },
+    "minimum-stability": "stable"
+}
