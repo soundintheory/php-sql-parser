@@ -11,8 +11,8 @@
     },
     "authors": [
         { "name": "Justin Swanhart", "email": "greenlion@gmail.com" },
-        { "name": "André Rothe", "email": "naderman@naderman.de" },
-        { "name": "fimbulvetr", "homepage": "https://github.com/fimbulvetr", "role": "contributor" },
+        { "name": "André Rothe", "email": "phosco@gmx.de" },
+        { "name": "Dan Vande More", "homepage": "https://github.com/fimbulvetr", "role": "contributor" },
         { "name": "Andy White", "homepage": "https://github.com/soundintheory", "role": "maintainer" }
     ],
     "minimum-stability": "stable"
