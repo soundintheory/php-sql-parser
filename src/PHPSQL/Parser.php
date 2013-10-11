@@ -530,7 +530,7 @@ class Parser extends \PHPSQL\Parser\Utils {
             $out['SET'] = $this->process_set_list($out['SET'], isset($out['UPDATE']));
         }
         if (!empty($out['DUPLICATE'])) {
-            $out['ON DUPLICATE KEY UPDATE'] = $this->process_set_list($out['DUPLICATE']);
+      	    $out['ON DUPLICATE KEY UPDATE'] = $this->process_set_list($out['DUPLICATE'], isset($out['UPDATE']));
             unset($out['DUPLICATE']);
         }
         if (!empty($out['INSERT'])) {
