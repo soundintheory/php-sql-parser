@@ -5,6 +5,9 @@ A fork of https://code.google.com/p/php-sql-parser/
 
 A Parser for mysql-ish queries that can represent a query as an array.
 
+Includes a bugfix when parsing "ON DUPLICATE KEY UPDATE"
+https://code.google.com/p/php-sql-parser/issues/detail?id=90
+
 # Goals:
 	1. A PSR-0 Compatible implementation
 	2. Improvements
