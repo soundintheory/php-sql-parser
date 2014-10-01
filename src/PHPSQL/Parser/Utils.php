@@ -64,6 +64,7 @@ class Utils extends \PHPSQL\Parser\Constants {
         if (($result[0] === '`') && ($result[strlen($result) - 1] === '`')) {
             $result = substr($result, 1, -1);
         }
+        $result = str_replace('`.`', '.', $result);
         return str_replace('``', '`', $result);
     }
 
