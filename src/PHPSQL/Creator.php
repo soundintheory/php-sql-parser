@@ -449,6 +449,7 @@ class Creator {
             $sql .= $this->processConstant($v);
             $sql .= $this->processSubQuery($v);
             $sql .= $this->processSelectBracketExpression($v);
+            $sql .= $this->processReserved($v);
 
             if ($len == strlen($sql)) {
                 throw new \PHPSQL\Exception\UnableToCreateSQL('expression subtree', $k, $v, 'expr_type');
