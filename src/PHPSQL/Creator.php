@@ -413,8 +413,8 @@ class Creator {
             if ($len == strlen($sql)) {
                 throw new \PHPSQL\Exception\UnableToCreateSQL('function subtree', $k, $v, 'expr_type');
             }
-
-            $sql .= ($this->isReserved($v) ? " " : ",");
+            $sql .= ($this->isReserved($v) || ($parsed['base_expr'] == 'CAST')
+                     ? " " : ",");
         }
         return $parsed['base_expr'] . "(" . substr($sql, 0, -1) . ")";
     }
