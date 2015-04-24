@@ -413,8 +413,8 @@ class Creator {
             if ($len == strlen($sql)) {
                 throw new \PHPSQL\Exception\UnableToCreateSQL('function subtree', $k, $v, 'expr_type');
             }
-
-            $sql .= ($this->isReserved($v) ? " " : ",");
+            $sql .= ($this->isReserved($v) || ($parsed['base_expr'] == 'CAST')
+                     ? " " : ",");
         }
         return $parsed['base_expr'] . "(" . substr($sql, 0, -1) . ")";
     }
@@ -449,6 +449,8 @@ class Creator {
             $sql .= $this->processConstant($v);
             $sql .= $this->processSubQuery($v);
             $sql .= $this->processSelectBracketExpression($v);
+            $sql .= $this->processReserved($v);
+            $sql .= $this->processColRef($v);
 
             if ($len == strlen($sql)) {
                 throw new \PHPSQL\Exception\UnableToCreateSQL('expression subtree', $k, $v, 'expr_type');
@@ -470,6 +472,7 @@ class Creator {
             $sql .= $this->processColRef($v);
             $sql .= $this->processOperator($v);
             $sql .= $this->processConstant($v);
+            $sql .= $this->processFunction($v);
 
             if ($len == strlen($sql)) {
                 throw new \PHPSQL\Exception\UnableToCreateSQL('expression ref_clause', $k, $v, 'expr_type');
