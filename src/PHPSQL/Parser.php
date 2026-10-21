@@ -284,7 +284,7 @@ class Parser extends \PHPSQL\Parser\Utils {
             case 'DATABASE':
             case 'SCHEMA':
                 if ($prev_category === 'DROP') {
-                    continue;
+                    break;
                 }
                 $token_category = $upper;
                 break;
@@ -906,7 +906,7 @@ class Parser extends \PHPSQL\Parser\Utils {
                 }
                 $parseInfo['alias']['name'] = $str;
                 $parseInfo['alias']['base_expr'] = trim($parseInfo['alias']['base_expr']);
-                continue;
+                break;
 
             case 'INDEX':
                 if ($token_category == 'CREATE') {
@@ -928,13 +928,13 @@ class Parser extends \PHPSQL\Parser\Utils {
             case 'INNER':
             case 'OUTER':
                 $parseInfo['token_count']++;
-                continue;
+                break;
                 break;
 
             case 'FOR':
                 $parseInfo['token_count']++;
                 $skip_next = true;
-                continue;
+                break;
                 break;
 
             case 'LEFT':
@@ -958,7 +958,7 @@ class Parser extends \PHPSQL\Parser\Utils {
 
             default:
                 if ($upper === "") {
-                    continue; # ends the switch statement!
+                    break; # ends the switch statement!
                 }
 
                 if ($parseInfo['token_count'] === 0) {

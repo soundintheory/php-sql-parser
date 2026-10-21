@@ -4,7 +4,7 @@
     "description": "SQL parsing tools for PHP",
     "license": "BSD-2-Clause",
     "require": {
-        "php": ">=5.3.3"
+        "php": ">=7.4"
     },
     "autoload": {
         "psr-0": { "PHPSQL": "src/" }
